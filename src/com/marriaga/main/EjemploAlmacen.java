@@ -17,7 +17,18 @@ public class EjemploAlmacen {
         productos[7] = new NoPerecible("Azúcar", 28, 1, 900);
 
         for (int i = 0; i < productos.length; i++) {
-            System.out.println(productos[i]);
+            System.out.println("===================================================================");
+            System.out.print("Nombre= " + productos[i].getNombre() + ", Precio= " + productos[i].getPrecio());
+            if (productos[i] instanceof Lacteo) {
+                System.out.println(", Cantidad= " + ((Lacteo) productos[i]).getCantidad() + ", Proteinas= " + ((Lacteo) productos[i]).getProtreinas());
+            } else if (productos[i] instanceof Fruta) {
+                System.out.println(", Peso= " + ((Fruta) productos[i]).getPeso() + ", Color= " + ((Fruta) productos[i]).getColor());
+            } else if (productos[i] instanceof Limpieza) {
+                System.out.println(", Componentes= " + ((Limpieza) productos[i]).getComponentes() + ", Litros=" + ((Limpieza) productos[i]).getLitros());
+            } else if (productos[i] instanceof NoPerecible) {
+                System.out.println(", Contenido= " + ((NoPerecible) productos[i]).getContenido() + ", Calorías= " + ((NoPerecible) productos[i]).getCalorias());
+            }
+
         }
     }
 }
